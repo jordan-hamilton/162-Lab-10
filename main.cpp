@@ -1,8 +1,11 @@
 /***********************************************************************************************
 ** Program name: Lab 10
 ** Author: Jordan Hamilton
-** Date: 11/27/2018
-** Description: This program
+** Date: 11/29/2018
+** Description: This program provides the user with a menu asking them if they'd like to find a
+** Fibonacci number with or without using recurson. The user is then prompted to enter an
+** integer, then the appropriate method for calculating the Fibonacci number is displayed and
+** timed using clock().
 ***********************************************************************************************/
 
 #include <ctime>
@@ -16,7 +19,6 @@
 using std::cout;
 using std::endl;
 using std::fixed;
-using std::setprecision;
 using std::unique_ptr;
 
 void populateMenu(unique_ptr<Menu> &menu);
@@ -40,19 +42,19 @@ int main() {
 
     switch (choice)  {
 
-      case 1 : number = mainMenu->getIntFromPrompt("What Fibonacci number would you like to know?", 1, 100, false);
+      case 1 : number = mainMenu->getIntFromPrompt("What Fibonacci number would you like to know?", 1, 50, false);
                clockTicks = clock();
                cout << "Fibonacci number F" << number << ": " << fibonacciNonRecursive(number) << endl;
                clockTicks = clock() - clockTicks;
-               cout << fixed << setprecision(10) << "Clock time for this calculation was "
+               cout << fixed << "Clock time for this calculation was "
                     << static_cast<float>(clockTicks) / CLOCKS_PER_SEC << endl;
                break;
 
-      case 2 : number = mainMenu->getIntFromPrompt("What Fibonacci number would you like to know?", 1, 100, false);
+      case 2 : number = mainMenu->getIntFromPrompt("What Fibonacci number would you like to know?", 1, 50, false);
                clockTicks = clock();
                cout << "Fibonacci number F" << number << ": " << fibonacciRecursive(number) << endl;
                clockTicks = clock() - clockTicks;
-               cout << fixed << setprecision(10) << "Clock time for this calculation was "
+               cout << fixed << "Clock time for this calculation was "
                     << static_cast<float>(clockTicks) / CLOCKS_PER_SEC << endl;
                break;
 

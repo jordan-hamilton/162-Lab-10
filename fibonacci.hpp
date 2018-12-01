@@ -1,5 +1,12 @@
-#include <iostream>
+/*********************************************************************
+** Description: Header file for Fibonacci functions.
+*********************************************************************/
 
-int fibonacciNonRecursive(const int &n);
+#ifndef FIBONACCI_HPP
+#define FIBONACCI_HPP
 
-int fibonacciRecursive(const int &n);
+long long int fibonacciNonRecursive(const int &n);
+
+long long int fibonacciRecursive(const int &n);
+
+#endif

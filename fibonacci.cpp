@@ -1,14 +1,17 @@
-//Source: https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
-
 #include "fibonacci.hpp"
 
-using std::cout;
-using std::endl;
+/*************************************************************************
+** Description: Takes a constant reference to a long long int, then
+** performs a for loop to increment an integer, currentNumber, by the
+** previous number in the loop, looping until the integer passed to the
+** function is reached. The currentNumber variable is then returned as the
+** desired Fibonacci number.
+** Source: https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
+*************************************************************************/
+long long int fibonacciNonRecursive(const int &n) {
 
-int fibonacciNonRecursive(const int &n) {
-
-  int currentNumber = 1;
-  int prevNumber = 1;
+  long long int currentNumber = 1;
+  long long int prevNumber = 1;
 
   if (n <= 1) {
     return 1;
@@ -16,7 +19,7 @@ int fibonacciNonRecursive(const int &n) {
 
     for (int i = 2; i < n; i++) {
 
-        int temp = currentNumber;
+        long long int temp = currentNumber;
         currentNumber = currentNumber + prevNumber;
         prevNumber = temp;
 
@@ -28,7 +31,15 @@ int fibonacciNonRecursive(const int &n) {
 
 }
 
-int fibonacciRecursive(const int &n) {
+
+/*************************************************************************
+** Description: Takes a constant reference to a long long int, then calls
+** the same function with the previous two numbers in the sequence. The
+** calls repeat recursively until the passed number is less than or equal
+** to 1 and return the calculated value.
+** Source: https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
+*************************************************************************/
+long long int fibonacciRecursive(const int &n) {
 
   if (n <= 1){
     return n;
